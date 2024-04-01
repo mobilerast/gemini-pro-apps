@@ -1,0 +1,30 @@
+{
+  "name": "gemini-pro-apps",
+  "version": "1.0.0",
+  "description": "Node.js - Angular apps for gemini pro implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rastmob/gemini-pro-apps.git"
+  },
+  "keywords": [
+    "gemini",
+    "gemini",
+    "pro",
+    "gemini",
+    "api",
+    "ai"
+  ],
+  "author": "Rast Mobile",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rastmob/gemini-pro-apps/issues"
+  },
+  "homepage": "https://github.com/rastmob/gemini-pro-apps#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
