@@ -18,7 +18,14 @@
     "api",
     "ai"
   ],
-  "author": "Rast Mobile",
+  "author": {
+    "name": "Rast Mobile",
+    "url": "https://rastmobile.com/en",
+    "twitter": "https://twitter.com/rastmobile",
+    "instagram": "https://instagram.com/mobilerast",
+    "linkedin": "https://linkedin.com/company/rastmobile",
+    "email": "contact@rastmobile.com / mehmet.alp@rastmobile.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rastmob/gemini-pro-apps/issues"
