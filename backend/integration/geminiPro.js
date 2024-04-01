@@ -1,20 +1,32 @@
-const GeminiPro = require('gemini-pro-sdk');
+const { GenerativeAIClient } = require('@google-cloud/generative-ai');
+require('dotenv').config();
 
-const geminiPro = new GeminiPro({
-  apiKey: process.env.GEMINI_PRO_API_KEY
-});
+const apiKey = process.env.GEMINI_PRO_API_KEY;
+const generativeAIClient = new GoogleGenerativeAI(apiKey);
 
-exports.elaborateAudio = async (audioFile) => {
+
+exports.uploadAudio = async (req, res) => {
   try {
-    const predefinedPrompt = "Can you please check this audio's English? Also, can you please make some suggestions along with your response to help improve the user's grammar?";
-
-
-    const elaboratedAudio = await geminiPro.elaborate(audioFile, predefinedPrompt);
-
+    const uploadedFile = await fileUpload.uploadFile(req);
+    // const prompt = req.body.prompt;
+    const prompt = "please explain the steps in the audio file."
  
-    return elaboratedAudio;
+    const [response] = await generativeAIClient.generateText({
+      prompt: {
+        text: prompt,
+        audio: {
+          content: uploadedFile.data, 
+        },
+      },
+    });
+
+    const elaboratedText = response.result.candidates[0].output;
+
+    console.log(elaboratedText);
+
+    res.json({ elaboratedText });
   } catch (err) {
-    console.log(err);
+   console.log(err);
     throw err;
   }
 };
