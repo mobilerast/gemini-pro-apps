@@ -1,0 +1,12 @@
+<div>
+    <input type="file" (change)="onFileSelected($event)">
+    <button (click)="onUpload()">Upload and Elaborate</button>
+  </div>
+  
+  <div *ngIf="elaboratedAudioUrl">
+    <audio controls src="{{ elaboratedAudioUrl }}"></audio>
+  </div>
+  
+  <div *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
